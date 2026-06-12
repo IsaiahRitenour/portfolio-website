@@ -160,6 +160,13 @@ a {
   padding: 30px 0 54px;
 }
 
+.hero-name {
+  margin-bottom: 8px;
+  color: #f4fff9;
+  font-size: clamp(1.05rem, 1.5vw, 1.28rem);
+  font-weight: 700;
+}
+
 .eyebrow {
   margin: 0 0 16px;
   color: var(--accent);
