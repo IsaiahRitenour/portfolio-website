@@ -265,7 +265,7 @@ h3 {
   gap: 12px;
   align-self: center;
   justify-self: end;
-  width: min(100%, 310px);
+  width: min(100%, 340px);
   min-height: 0;
 }
 
@@ -309,7 +309,7 @@ h3 {
 
 .system-card {
   position: static;
-  padding: 12px;
+  padding: 18px 14px;
   border: 1px solid var(--line-strong);
   border-radius: var(--radius);
   background: rgba(6, 13, 21, 0.9);
