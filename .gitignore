@@ -1,0 +1,28 @@
+# Git
+.git
+
+# Environment variables
+.env
+.env.*
+
+# VS Code
+.vscode/
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# macOS
+.DS_Store
+
+# Logs
+*.log
+
+# Node (if you ever add it later)
+node_modules/
+
+# Python (if you ever add it later)
+__pycache__/
+*.pyc
+venv/
+.venv/
