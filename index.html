@@ -39,6 +39,43 @@
       rel="stylesheet"
     >
     <link rel="stylesheet" href="styles.css">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Person",
+            "@id": "https://isaiahritenour.com/#person",
+            "name": "Isaiah Ritenour",
+            "url": "https://isaiahritenour.com/",
+            "email": "mailto:isaiah@isaiahritenour.com",
+            "jobTitle": "Systems Engineer",
+            "image": "https://isaiahritenour.com/assets/isaiah-ritenour.png",
+            "sameAs": [
+              "https://www.linkedin.com/in/isaiah-ritenour-b530b02b4/",
+              "https://github.com/IsaiahRitenour"
+            ],
+            "knowsAbout": [
+              "Acumatica ERP",
+              "n8n automation",
+              "Python",
+              "SQL",
+              "EDI",
+              "Systems engineering"
+            ]
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://isaiahritenour.com/#website",
+            "url": "https://isaiahritenour.com/",
+            "name": "Isaiah Ritenour Portfolio",
+            "publisher": {
+              "@id": "https://isaiahritenour.com/#person"
+            }
+          }
+        ]
+      }
+    </script>
   </head>
   <body>
     <header class="site-header" data-header>
@@ -48,14 +85,14 @@
       </a>
 
       <nav class="nav" aria-label="Primary navigation">
-        <a href="#work">Work</a>
+        <a href="projects.html">Projects</a>
         <a href="#systems">Systems</a>
         <a href="#resume">Resume</a>
         <a href="#experience">Experience</a>
         <a href="#contact">Contact</a>
       </nav>
 
-      <a class="header-action" href="mailto:Isaiahritt1@gmail.com">
+      <a class="header-action" href="mailto:isaiah@isaiahritenour.com" aria-label="Email Isaiah Ritenour">
         <span aria-hidden="true">&nearr;</span>
         Email
       </a>
@@ -74,11 +111,11 @@
             something reliable, visible, and easy to run.
           </p>
           <div class="hero-actions" aria-label="Intro actions">
-            <a class="button button-primary" href="#work">
+            <a class="button button-primary" href="projects.html">
               <span aria-hidden="true">&darr;</span>
-              View Work
+              View Projects
             </a>
-            <a class="button button-secondary" href="mailto:Isaiahritt1@gmail.com">
+            <a class="button button-secondary" href="mailto:isaiah@isaiahritenour.com" aria-label="Email Isaiah Ritenour">
               <span class="button-icon" aria-hidden="true">&#9993;</span>
               Get in Touch
             </a>
@@ -87,6 +124,7 @@
               href="https://www.linkedin.com/in/isaiah-ritenour-b530b02b4/"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="View Isaiah Ritenour on LinkedIn"
             >
               <span class="linkedin-mark" aria-hidden="true">in</span>
               LinkedIn
@@ -96,6 +134,7 @@
               href="https://github.com/IsaiahRitenour"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="View Isaiah Ritenour on GitHub"
             >
               <span class="github-mark" aria-hidden="true">
                 <svg viewBox="0 0 24 24" focusable="false">
@@ -277,6 +316,7 @@
               href="assets/Isaiah_Ritenour_Resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="Download Isaiah Ritenour resume PDF"
             >
               <span aria-hidden="true">&darr;</span>
               Download Resume
@@ -286,6 +326,7 @@
               href="https://www.linkedin.com/in/isaiah-ritenour-b530b02b4/"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="View Isaiah Ritenour on LinkedIn"
             >
               <span class="linkedin-mark" aria-hidden="true">in</span>
               View LinkedIn
@@ -295,6 +336,7 @@
               href="https://github.com/IsaiahRitenour"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="View Isaiah Ritenour on GitHub"
             >
               <span class="github-mark" aria-hidden="true">
                 <svg viewBox="0 0 24 24" focusable="false">
@@ -379,15 +421,16 @@
           </p>
         </div>
         <div class="contact-actions">
-          <a class="button button-primary" href="mailto:Isaiahritt1@gmail.com">
+          <a class="button button-primary" href="mailto:isaiah@isaiahritenour.com" aria-label="Email Isaiah Ritenour">
             <span aria-hidden="true">&#9993;</span>
-            Isaiahritt1@gmail.com
+            isaiah@isaiahritenour.com
           </a>
           <a
             class="button button-secondary"
             href="https://www.linkedin.com/in/isaiah-ritenour-b530b02b4/"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="View Isaiah Ritenour on LinkedIn"
           >
             <span class="linkedin-mark" aria-hidden="true">in</span>
             LinkedIn
@@ -397,6 +440,7 @@
             href="https://github.com/IsaiahRitenour"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="View Isaiah Ritenour on GitHub"
           >
             <span class="github-mark" aria-hidden="true">
               <svg viewBox="0 0 24 24" focusable="false">
