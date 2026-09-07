@@ -258,23 +258,6 @@ h3 {
   margin-top: 24px;
 }
 
-.availability-note {
-  display: inline-flex;
-  align-items: center;
-  gap: 9px;
-  margin: 18px 0 0;
-  color: var(--muted);
-  font-size: clamp(0.85rem, 0.72rem + 0.18vw, 0.98rem);
-}
-
-.availability-note span {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: #7de0a2;
-  box-shadow: 0 0 0 4px rgba(125, 224, 162, 0.1), 0 0 16px rgba(125, 224, 162, 0.45);
-}
-
 .button {
   display: inline-flex;
   align-items: center;
