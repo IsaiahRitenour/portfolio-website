@@ -11,6 +11,9 @@ if (header) {
 
 const analyticsMeasurementId = "G-J0PS7QHFVT";
 const analyticsConsentKey = "portfolio-analytics-consent";
+const consentPreview = new URLSearchParams(window.location.search).get("consentPreview");
+const analyticsConsentRequired = consentPreview === "required"
+  || (consentPreview !== "not-required" && window.__portfolioAnalyticsConsentRequired === true);
 
 function loadAnalytics() {
   if (window.__portfolioAnalyticsLoaded) return;
@@ -26,7 +29,20 @@ function loadAnalytics() {
     window.dataLayer.push(arguments);
   };
   window.gtag("js", new Date());
+  window.gtag("consent", "default", { analytics_storage: "granted" });
   window.gtag("config", analyticsMeasurementId);
+}
+
+function disableAnalytics() {
+  window[`ga-disable-${analyticsMeasurementId}`] = true;
+  window.gtag?.("consent", "update", { analytics_storage: "denied" });
+
+  document.cookie.split(";").forEach((cookie) => {
+    const name = cookie.trim().split("=")[0];
+    if (name === "_ga" || name.startsWith("_ga_")) {
+      document.cookie = `${name}=; Max-Age=0; Path=/; SameSite=Lax`;
+    }
+  });
 }
 
 function setAnalyticsConsent(value) {
@@ -34,12 +50,17 @@ function setAnalyticsConsent(value) {
   document.querySelector(".cookie-notice")?.remove();
 
   if (value === "granted") {
+    window[`ga-disable-${analyticsMeasurementId}`] = false;
     loadAnalytics();
+    window.gtag?.("consent", "update", { analytics_storage: "granted" });
+  } else {
+    disableAnalytics();
   }
 }
 
-function showAnalyticsNotice() {
-  if (localStorage.getItem(analyticsConsentKey)) return;
+function showAnalyticsNotice({ force = false } = {}) {
+  if (!force && localStorage.getItem(analyticsConsentKey)) return;
+  if (document.querySelector(".cookie-notice")) return;
 
   const notice = document.createElement("aside");
   notice.className = "cookie-notice";
@@ -48,7 +69,7 @@ function showAnalyticsNotice() {
   notice.innerHTML = `
     <div class="cookie-notice__copy">
       <strong id="cookie-notice-title">Analytics preferences</strong>
-      <p>With your permission, this site uses Google Analytics to understand visits and improve the portfolio. <a href="/privacy">Learn more</a>.</p>
+      <p>Google Analytics is off until you choose. It helps improve this portfolio with aggregate visit data. <a href="/privacy">Learn more</a>.</p>
     </div>
     <div class="cookie-notice__actions">
       <button class="cookie-notice__button cookie-notice__button--secondary" type="button" data-analytics-consent="denied">No thanks</button>
@@ -64,10 +85,22 @@ function showAnalyticsNotice() {
   document.body.append(notice);
 }
 
-if (localStorage.getItem(analyticsConsentKey) === "granted") {
+document.querySelector("[data-analytics-manage]")?.addEventListener("click", () => {
+  localStorage.removeItem(analyticsConsentKey);
+  disableAnalytics();
+  showAnalyticsNotice({ force: true });
+});
+
+const savedAnalyticsConsent = localStorage.getItem(analyticsConsentKey);
+
+if (savedAnalyticsConsent === "granted") {
   loadAnalytics();
-} else {
+} else if (savedAnalyticsConsent === "denied") {
+  disableAnalytics();
+} else if (analyticsConsentRequired) {
   showAnalyticsNotice();
+} else {
+  loadAnalytics();
 }
 
 const workflowData = {

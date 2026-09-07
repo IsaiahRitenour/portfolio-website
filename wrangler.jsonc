@@ -1,13 +1,16 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "portfolio-website",
+  "main": "worker.js",
   "compatibility_date": "2026-06-15",
   "observability": {
     "enabled": true
   },
   "assets": {
     "directory": ".",
-    "not_found_handling": "404-page"
+    "not_found_handling": "404-page",
+    "binding": "ASSETS",
+    "run_worker_first": ["/", "/projects", "/projects/", "/privacy", "/privacy/", "/index.html", "/projects.html", "/privacy.html", "/404.html"]
   },
   "compatibility_flags": [
     "nodejs_compat"
