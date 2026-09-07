@@ -9,6 +9,67 @@ if (header) {
   window.addEventListener("scroll", updateHeader, { passive: true });
 }
 
+const analyticsMeasurementId = "G-J0PS7QHFVT";
+const analyticsConsentKey = "portfolio-analytics-consent";
+
+function loadAnalytics() {
+  if (window.__portfolioAnalyticsLoaded) return;
+  window.__portfolioAnalyticsLoaded = true;
+
+  const analyticsScript = document.createElement("script");
+  analyticsScript.async = true;
+  analyticsScript.src = `https://www.googletagmanager.com/gtag/js?id=${analyticsMeasurementId}`;
+  document.head.append(analyticsScript);
+
+  window.dataLayer = window.dataLayer || [];
+  window.gtag = function gtag() {
+    window.dataLayer.push(arguments);
+  };
+  window.gtag("js", new Date());
+  window.gtag("config", analyticsMeasurementId);
+}
+
+function setAnalyticsConsent(value) {
+  localStorage.setItem(analyticsConsentKey, value);
+  document.querySelector(".cookie-notice")?.remove();
+
+  if (value === "granted") {
+    loadAnalytics();
+  }
+}
+
+function showAnalyticsNotice() {
+  if (localStorage.getItem(analyticsConsentKey)) return;
+
+  const notice = document.createElement("aside");
+  notice.className = "cookie-notice";
+  notice.setAttribute("role", "dialog");
+  notice.setAttribute("aria-labelledby", "cookie-notice-title");
+  notice.innerHTML = `
+    <div class="cookie-notice__copy">
+      <strong id="cookie-notice-title">Analytics preferences</strong>
+      <p>With your permission, this site uses Google Analytics to understand visits and improve the portfolio. <a href="/privacy.html">Learn more</a>.</p>
+    </div>
+    <div class="cookie-notice__actions">
+      <button class="cookie-notice__button cookie-notice__button--secondary" type="button" data-analytics-consent="denied">No thanks</button>
+      <button class="cookie-notice__button" type="button" data-analytics-consent="granted">Accept analytics</button>
+    </div>
+  `;
+
+  notice.addEventListener("click", (event) => {
+    const choice = event.target.closest("[data-analytics-consent]")?.dataset.analyticsConsent;
+    if (choice) setAnalyticsConsent(choice);
+  });
+
+  document.body.append(notice);
+}
+
+if (localStorage.getItem(analyticsConsentKey) === "granted") {
+  loadAnalytics();
+} else {
+  showAnalyticsNotice();
+}
+
 const workflowData = {
   "startTicketThread": {
     "title": "Start Ticket Email Thread",

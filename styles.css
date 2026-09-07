@@ -752,6 +752,61 @@ h3 {
   font-size: clamp(0.8rem, 0.7rem + 0.14vw, 0.9rem);
 }
 
+.cookie-notice {
+  position: fixed;
+  right: max(20px, calc((100vw - var(--page-width)) / 2));
+  bottom: 20px;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  width: min(620px, calc(100vw - 40px));
+  padding: 18px;
+  border: 1px solid color-mix(in srgb, var(--line) 85%, white 15%);
+  border-radius: 14px;
+  background: color-mix(in srgb, var(--surface) 94%, black 6%);
+  box-shadow: 0 20px 45px rgb(0 0 0 / 0.32);
+}
+
+.cookie-notice__copy {
+  flex: 1 1 290px;
+}
+
+.cookie-notice__copy strong {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.cookie-notice__copy p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.88rem;
+  line-height: 1.45;
+}
+
+.cookie-notice__actions {
+  display: flex;
+  flex: 0 0 auto;
+  gap: 9px;
+}
+
+.cookie-notice__button {
+  min-height: 38px;
+  padding: 0 13px;
+  border: 1px solid var(--accent);
+  border-radius: 8px;
+  background: var(--accent);
+  color: #07111d;
+  font: 700 0.78rem/1 var(--mono);
+  cursor: pointer;
+}
+
+.cookie-notice__button--secondary {
+  border-color: var(--line);
+  background: transparent;
+  color: var(--text);
+}
+
 .not-found {
   display: grid;
   align-content: center;
@@ -908,6 +963,17 @@ h3 {
   .section,
   .footer {
     width: var(--page-width);
+  }
+
+  .cookie-notice {
+    right: 20px;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 14px;
+  }
+
+  .cookie-notice__actions {
+    justify-content: flex-end;
   }
 
   .site-header {
