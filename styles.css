@@ -807,6 +807,33 @@ h3 {
   color: var(--text);
 }
 
+body.has-consent-dialog::after {
+  position: fixed;
+  inset: 0;
+  z-index: 45;
+  background: rgb(0 0 0 / 0.48);
+  backdrop-filter: blur(4px);
+  content: "";
+}
+
+.cookie-notice--modal {
+  top: 50%;
+  right: auto;
+  bottom: auto;
+  left: 50%;
+  z-index: 50;
+  width: min(500px, calc(100vw - 40px));
+  align-items: stretch;
+  transform: translate(-50%, -50%);
+  border-color: color-mix(in srgb, var(--accent) 38%, var(--line));
+  background: color-mix(in srgb, var(--surface) 97%, black 3%);
+  box-shadow: 0 28px 80px rgb(0 0 0 / 0.54);
+}
+
+.cookie-notice--modal .cookie-notice__actions {
+  justify-content: flex-end;
+}
+
 .not-found {
   display: grid;
   align-content: center;
@@ -1091,6 +1118,13 @@ h3 {
 
   .cookie-notice__actions {
     justify-content: flex-end;
+  }
+
+  .cookie-notice--modal {
+    right: auto;
+    bottom: auto;
+    left: 50%;
+    align-items: stretch;
   }
 
   .site-header {

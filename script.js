@@ -48,6 +48,7 @@ function disableAnalytics() {
 function setAnalyticsConsent(value) {
   localStorage.setItem(analyticsConsentKey, value);
   document.querySelector(".cookie-notice")?.remove();
+  document.body.classList.remove("has-consent-dialog");
 
   if (value === "granted") {
     window[`ga-disable-${analyticsMeasurementId}`] = false;
@@ -58,14 +59,15 @@ function setAnalyticsConsent(value) {
   }
 }
 
-function showAnalyticsNotice({ force = false } = {}) {
+function showAnalyticsNotice({ force = false, modal = false } = {}) {
   if (!force && localStorage.getItem(analyticsConsentKey)) return;
   if (document.querySelector(".cookie-notice")) return;
 
   const notice = document.createElement("aside");
-  notice.className = "cookie-notice";
+  notice.className = `cookie-notice${modal ? " cookie-notice--modal" : ""}`;
   notice.setAttribute("role", "dialog");
   notice.setAttribute("aria-labelledby", "cookie-notice-title");
+  if (modal) notice.setAttribute("aria-modal", "true");
   notice.innerHTML = `
     <div class="cookie-notice__copy">
       <strong id="cookie-notice-title">Analytics preferences</strong>
@@ -83,12 +85,16 @@ function showAnalyticsNotice({ force = false } = {}) {
   });
 
   document.body.append(notice);
+  if (modal) {
+    document.body.classList.add("has-consent-dialog");
+    notice.querySelector("[data-analytics-consent]")?.focus();
+  }
 }
 
 document.querySelector("[data-analytics-manage]")?.addEventListener("click", () => {
   localStorage.removeItem(analyticsConsentKey);
   disableAnalytics();
-  showAnalyticsNotice({ force: true });
+  showAnalyticsNotice({ force: true, modal: true });
 });
 
 const savedAnalyticsConsent = localStorage.getItem(analyticsConsentKey);
