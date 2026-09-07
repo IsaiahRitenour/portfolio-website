@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#081018">
     <meta
       name="description"
       content="Isaiah Ritenour's portfolio featuring Acumatica ERP customizations, EDI workflows, n8n automation, SQL, Python data pipelines, and IT systems engineering projects."
@@ -27,11 +28,11 @@
     <meta name="twitter:image:alt" content="IR monogram for Isaiah Ritenour">
     <title>Isaiah Ritenour | Systems Engineer & Automation Developer</title>
     <link rel="canonical" href="https://isaiahritenour.com/">
-    <link rel="shortcut icon" href="/favicon.ico">
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    <link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48x48.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+    <link rel="shortcut icon" href="/assets/favicon-48x48.png?v=4">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico?v=4">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png?v=4">
+    <link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48x48.png?v=4">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png?v=4">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -78,6 +79,7 @@
     </script>
   </head>
   <body>
+    <a class="skip-link" href="#top">Skip to main content</a>
     <header class="site-header" data-header>
       <a class="brand" href="#top" aria-label="Isaiah Ritenour home">
         <span class="brand-mark">IR</span>
@@ -85,7 +87,7 @@
       </a>
 
       <nav class="nav" aria-label="Primary navigation">
-        <a href="projects.html">Projects</a>
+        <a href="/projects">Projects</a>
         <a href="#systems">Systems</a>
         <a href="#resume">Resume</a>
         <a href="#experience">Experience</a>
@@ -98,20 +100,19 @@
       </a>
     </header>
 
-    <main id="top">
+    <main id="top" tabindex="-1">
       <section class="hero section">
         <div class="hero-copy">
           <p class="hero-name">Isaiah Ritenour</p>
           <p class="eyebrow">Systems Engineer &middot; Acumatica &middot; Data Automation</p>
           <h1>I build the systems layer that keeps operations moving.</h1>
           <p class="hero-lede">
-            I work across Acumatica ERP customizations, imports, Generic Inquiries,
-            EDI workflows, n8n automations, SQL, and Python data pipelines. My sweet
-            spot is taking the messy middle between systems and turning it into
-            something reliable, visible, and easy to run.
+            I turn fragile handoffs, manual reporting, and disconnected business
+            systems into reliable workflows. My work spans Acumatica ERP, n8n,
+            SQL, Python, EDI, and the operational details in between.
           </p>
           <div class="hero-actions" aria-label="Intro actions">
-            <a class="button button-primary" href="projects.html">
+            <a class="button button-primary" href="/projects">
               <span aria-hidden="true">&darr;</span>
               View Projects
             </a>
@@ -144,6 +145,10 @@
               GitHub
             </a>
           </div>
+          <p class="availability-note">
+            <span aria-hidden="true"></span>
+            Open to systems engineering, ERP automation, and data integration work.
+          </p>
         </div>
 
         <aside class="portrait-panel" aria-label="Portrait and profile summary">
@@ -181,20 +186,27 @@
       <section class="section split-section" id="work">
         <div class="section-intro">
           <p class="eyebrow">Selected Work</p>
-          <h2>Practical projects for real business bottlenecks.</h2>
+          <div>
+            <h2>Practical projects for real business bottlenecks.</h2>
+            <p class="section-supporting-copy">
+              See the implementation details behind the systems work: the problem,
+              the approach, and the result.
+            </p>
+            <a class="text-link" href="/projects">Read the project case study <span aria-hidden="true">&rarr;</span></a>
+          </div>
         </div>
 
         <div class="work-grid">
           <article class="work-card">
             <div class="card-topline">
               <span>01</span>
-              <span>ERP</span>
+              <span>Case Study</span>
             </div>
-            <h3>Custom screens, imports, and Generic Inquiries</h3>
+            <h3>Asana ticket communication loop</h3>
             <p>
-              Built and maintained Acumatica customizations with C# DAC extensions,
-              validation logic, event handlers, processing screens, Report Designer
-              work, and GIs that give operations cleaner views of their data.
+              Built a four-workflow n8n system that keeps shared inbox requests,
+              Asana tasks, email replies, and attachments connected in one
+              trackable conversation.
             </p>
           </article>
 
@@ -394,20 +406,27 @@
               </p>
             </div>
           </article>
-
-          <article class="timeline-item">
-            <div class="timeline-date">2026</div>
-            <div>
-              <h3>B.S. Information Technology, Cybersecurity Concentration</h3>
-              <p class="muted">Pennsylvania State University &middot; Expected December 2026</p>
-              <p>
-                Coursework includes database management systems, information
-                security and risk management, IT project management, web development,
-                and application development.
-              </p>
-            </div>
-          </article>
         </div>
+      </section>
+
+      <section class="section education" id="education">
+        <div class="section-intro">
+          <p class="eyebrow">Education</p>
+          <h2>Building the security and systems foundation alongside the work.</h2>
+        </div>
+
+        <article class="education-panel">
+          <div class="timeline-date">Expected Dec. 2026</div>
+          <div>
+            <h3>B.S. Information Technology, Cybersecurity Concentration</h3>
+            <p class="muted">Pennsylvania State University</p>
+            <p>
+              Coursework includes database management systems, information security
+              and risk management, IT project management, web development, and
+              application development.
+            </p>
+          </div>
+        </article>
       </section>
 
       <section class="section contact-section" id="contact">

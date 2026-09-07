@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#081018">
     <meta
       name="description"
       content="Projects by Isaiah Ritenour, including Acumatica ERP work, automation workflows, data pipelines, integrations, and n8n workflow examples."
@@ -12,7 +13,7 @@
       property="og:description"
       content="A portfolio of ERP, automation, integration, data pipeline, and n8n workflow projects by Isaiah Ritenour."
     >
-    <meta property="og:url" content="https://isaiahritenour.com/projects.html">
+    <meta property="og:url" content="https://isaiahritenour.com/projects">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Isaiah Ritenour Portfolio">
     <meta property="og:image" content="https://isaiahritenour.com/assets/favicon.png">
@@ -26,12 +27,12 @@
     <meta name="twitter:image" content="https://isaiahritenour.com/assets/favicon.png">
     <meta name="twitter:image:alt" content="IR monogram for Isaiah Ritenour">
     <title>Isaiah Ritenour | Projects</title>
-    <link rel="canonical" href="https://isaiahritenour.com/projects.html">
-    <link rel="shortcut icon" href="/favicon.ico">
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    <link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48x48.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+    <link rel="canonical" href="https://isaiahritenour.com/projects">
+    <link rel="shortcut icon" href="/assets/favicon-48x48.png?v=4">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico?v=4">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png?v=4">
+    <link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48x48.png?v=4">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png?v=4">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -66,8 +67,8 @@
           },
           {
             "@type": "WebPage",
-            "@id": "https://isaiahritenour.com/projects.html#webpage",
-            "url": "https://isaiahritenour.com/projects.html",
+            "@id": "https://isaiahritenour.com/projects#webpage",
+            "url": "https://isaiahritenour.com/projects",
             "name": "Isaiah Ritenour | Projects",
             "isPartOf": {
               "@id": "https://isaiahritenour.com/#website"
@@ -90,18 +91,19 @@
     </script>
   </head>
   <body>
+    <a class="skip-link" href="#top">Skip to main content</a>
     <header class="site-header" data-header>
-      <a class="brand" href="index.html#top" aria-label="Isaiah Ritenour home">
+      <a class="brand" href="/#top" aria-label="Isaiah Ritenour home">
         <span class="brand-mark">IR</span>
         <span>Isaiah Ritenour</span>
       </a>
 
       <nav class="nav" aria-label="Primary navigation">
-        <a href="index.html#top">Home</a>
-        <a href="projects.html" aria-current="page">Projects</a>
-        <a href="index.html#systems">Systems</a>
-        <a href="index.html#resume">Resume</a>
-        <a href="index.html#contact">Contact</a>
+        <a href="/#top">Home</a>
+        <a href="/projects" aria-current="page">Projects</a>
+        <a href="/#systems">Systems</a>
+        <a href="/#resume">Resume</a>
+        <a href="/#contact">Contact</a>
       </nav>
 
       <a class="header-action" href="mailto:isaiah@isaiahritenour.com" aria-label="Email Isaiah Ritenour">
@@ -110,7 +112,7 @@
       </a>
     </header>
 
-    <main id="top">
+    <main id="top" tabindex="-1">
       <section class="projects-hero section">
         <div>
           <p class="hero-name">Projects</p>
@@ -232,7 +234,7 @@
                 </p>
               </div>
               <div class="workflow-toolbar-actions">
-                <div class="workflow-status" data-workflow-status>Ticket Workflow 1/4</div>
+                <div class="workflow-status" data-workflow-status aria-live="polite">Ticket Workflow 1/4</div>
               </div>
             </div>
 
@@ -338,10 +340,9 @@
 
     <footer class="footer">
       <span>Isaiah Ritenour</span>
-      <span><a href="index.html#top">Home</a> &middot; <a href="projects.html">Projects</a></span>
+      <span><a href="/#top">Home</a> &middot; <a href="/projects">Projects</a></span>
     </footer>
 
     <script src="script.js"></script>
   </body>
 </html>
-

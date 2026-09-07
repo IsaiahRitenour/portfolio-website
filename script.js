@@ -1217,11 +1217,13 @@ async function runWorkflowDemo() {
 
   const workflow = workflowData[activeWorkflowId];
   const runButton = viewer.querySelector("[data-workflow-run]");
+  const status = viewer.querySelector("[data-workflow-status]");
   if (!workflow) return;
 
   workflowView.running = true;
   runButton.disabled = true;
   runButton.textContent = "Running";
+  status.textContent = `${workflow.status}: demo running`;
 
   viewer.querySelectorAll(".workflow-node").forEach((node) => {
     node.classList.remove("is-executing", "is-complete");
@@ -1251,6 +1253,7 @@ async function runWorkflowDemo() {
 
   runButton.textContent = "Execute Demo";
   runButton.disabled = false;
+  status.textContent = `${workflow.status}: demo complete`;
   workflowView.running = false;
 }
 
