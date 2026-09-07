@@ -48,7 +48,7 @@ function showAnalyticsNotice() {
   notice.innerHTML = `
     <div class="cookie-notice__copy">
       <strong id="cookie-notice-title">Analytics preferences</strong>
-      <p>With your permission, this site uses Google Analytics to understand visits and improve the portfolio. <a href="/privacy.html">Learn more</a>.</p>
+      <p>With your permission, this site uses Google Analytics to understand visits and improve the portfolio. <a href="/privacy">Learn more</a>.</p>
     </div>
     <div class="cookie-notice__actions">
       <button class="cookie-notice__button cookie-notice__button--secondary" type="button" data-analytics-consent="denied">No thanks</button>
